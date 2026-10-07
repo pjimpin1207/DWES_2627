@@ -32,7 +32,6 @@ $velocidad_inicial_vertical = $velocidad_inicial * sin($angulo_radial);
 $tiempo_vuelo = (2 * $velocidad_inicial_vertical) / G;
 
 // Altura máxima del proyectil: Ymax = (V0^2 * sen^2(A0)) / 2g
-// Matemáticamente equivale a: (V0y^2) / 2g
 $altura_maxima = pow($velocidad_inicial_vertical, 2) / (2 * G);
 
 // Alcance máximo del proyectil: Xmax = (V0^2 * sen(2*A0)) / g
