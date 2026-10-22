@@ -95,7 +95,7 @@
                             <td><?php echo $libro['titulo'] ?></td>
                             <td><?php echo $libro['autor'] ?></td>
                             <td><?php echo $libro['editorial'] ?></td>
-                            <td><?php echo $libro['genero'] ?></td>
+                            <td><?php echo implode(',', $libro['genero']) ?></td>
                             <td class="text-end"><?php echo number_format($libro['precio'], 2, ',', '.') ?>€</td>
                         </tr>
                         <?php endforeach ?>

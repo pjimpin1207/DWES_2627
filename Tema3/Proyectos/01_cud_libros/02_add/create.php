@@ -35,23 +35,28 @@ $genero = htmlspecialchars($_POST["genero"]);
 
 $precio = htmlspecialchars($_POST["precio"]);
 
+// obtener el array existentes
+$libros = getLibros();
+
+// obtener el id del nuevo libro creado
+$new_book_id = obtener_id_nuevo_libro($libros);
+
 // crear array asociativo de los datos del formulario
 $new_book = [
+    'id' => $new_book_id,
     'titulo' => $titulo,
     'autor' => $autor,
     'editorial' => $editorial,
-    'genero' => $genero,
+    'genero' => explode(',', $genero),
     'precio' => $precio
 ];
 
-// obtener el id del nuevo libro creado
-$new_book_id = obtener_id_nuevo_libro(($new_book);
+// Agregar el nuevo libro al array de libros
+$libros[] = $new_book;
 
 
 
 //Negociado
 
 //Views
-include "views/new.view.php";
-
-?>
+include "views/index.view.php";
